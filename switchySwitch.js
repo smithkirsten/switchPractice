@@ -58,3 +58,41 @@ switch(name) {
      console.log("Please try again");
      break;
  }
+
+ //Create a switch statement that evaluates a month and a year and tells you how many days are in the month
+
+
+function dayCount(month, year) {
+
+  switch(month) {
+    case "September":
+    case "April":
+    case "June":
+    case "November":
+      dayCount = 30;
+      break;
+    case "January":
+    case "March":
+    case "May":
+    case "July":
+    case "August":
+    case "September":
+    case "October":
+      dayCount = 31
+      break;
+    case "February":
+      if (year % 4 === 0) {
+        dayCount = 29;
+      } else {
+      dayCount = 28;
+      }
+      break;
+    default:
+      console.log(`${month} is not a valid month`);
+      dayCount = null;
+      break;
+  }
+  return dayCount;
+}
+
+console.log(dayCount("February", 2007));
